@@ -83,15 +83,16 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section id="home" className="pt-28 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section - Reduced top padding to pt-24 to pull the whole section UP */}
+      <section id="home" className="pt-24 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6 py-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Main Content */}
-            <div>
+            
+            {/* Left Column - Main Content - Aggressively pulled UP (-mt-16 to -mt-24) */}
+            <div className="relative -mt-16 lg:-mt-24">
               
-              {/* CENTERED LOGO - Aggressively pulled UP to the header (-mt-20) and pulling the badge UP into the transparent space (-mb-10) */}
-              <div className="flex justify-center -mt-20 -mb-10 relative z-20">
+              {/* CENTERED LOGO - Aggressively pulling the badge UP into the transparent space (-mb-24) */}
+              <div className="flex justify-center -mb-24 relative z-20">
                 <img
                   src="/logo-v4.png"
                   alt="Silveyra Dispatch Services Logo"
@@ -105,7 +106,7 @@ export default function SilveyraDispatchServices() {
 
               {/* CENTERED Badge - Tightened spacing */}
               <div className="flex justify-center mb-3 relative z-30">
-                <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold">
+                <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm">
                   ✨ Servicio de Despacho Profesional
                 </div>
               </div>
