@@ -83,16 +83,18 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section - Removed the floating center code. It now starts exactly below the header! */}
-      <section id="home" className="pt-28 md:pt-32 pb-16 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section - pt-28 leaves exactly a tiny gap below the h-24 header */}
+      <section id="home" className="pt-28 pb-16 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
+          {/* CHANGED to items-start: This stops the text from being pushed down to the middle of the screen! */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start pt-4">
             
             {/* Left Column - Main Content */}
-            <div>
+            <div className="flex flex-col items-center lg:items-start">
               
-              {/* CENTERED LOGO - No negative margins. Sits perfectly below header with a small 1/4 inch gap below it (mb-3) */}
-              <div className="flex justify-center mb-3">
+              {/* CENTERED LOGO - Sits right at the top, almost touching the header. Small gap below it (mb-4) */}
+              <div className="flex justify-center w-full mb-4">
                 <img
                   src="/logo-v4.png"
                   alt="Silveyra Dispatch Services Logo"
@@ -105,24 +107,24 @@ export default function SilveyraDispatchServices() {
               </div>
 
               {/* CENTERED Badge - Tightened spacing */}
-              <div className="flex justify-center mb-3">
+              <div className="flex justify-center w-full mb-3">
                 <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm">
                   ✨ Servicio de Despacho Profesional
                 </div>
               </div>
              
               {/* Tightened spacing on all text elements below so the button stays high up */}
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2 leading-tight text-center">
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2 leading-tight text-center w-full">
                 DESPACHO DE CAMIONES
               </h1>
-              <p className="text-2xl font-semibold text-green-600 mb-3 text-center">
+              <p className="text-2xl font-semibold text-green-600 mb-3 text-center w-full">
                 Para Dueños Operadores
               </p>
-              <p className="text-lg text-gray-700 mb-5 leading-relaxed text-center md:text-left">
+              <p className="text-lg text-gray-700 mb-5 leading-relaxed text-center w-full">
                 Nuestros despachadores de camiones trabajan para conseguirte cargas, manejar todo el papeleo, mientras tú conduces y ganas dinero. Nos enfocamos en hacer crecer tu negocio y maximizar tus ganancias.
               </p>
 
-              <div className="flex justify-center mb-5">
+              <div className="flex justify-center w-full mb-5">
                 <a 
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
@@ -133,7 +135,7 @@ export default function SilveyraDispatchServices() {
                 </a>
               </div>
 
-              <div className="flex justify-center items-center space-x-3 text-gray-700">
+              <div className="flex justify-center items-center space-x-3 text-gray-700 w-full">
                 <Phone className="w-5 h-5 text-green-600" />
                 <a href="tel:4692465756" className="text-xl font-bold hover:text-green-600 transition-colors">
                   (469) 246-5756
@@ -142,7 +144,7 @@ export default function SilveyraDispatchServices() {
             </div>
 
             {/* Right Column - Family Business Card */}
-            <div>
+            <div className="pt-2 lg:pt-0">
               <div className="bg-white border-4 border-green-500 shadow-2xl rounded-2xl overflow-hidden">
                 <div className="p-8">
                   <div className="text-center mb-6">
