@@ -83,15 +83,15 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section - Pushed down so the header doesn't cover it */}
+      {/* Hero Section */}
       <section id="home" className="pt-36 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6 py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Main Content */}
             <div>
               
-              {/* CENTERED LOGO - Moved here and made larger! */}
-              <div className="flex justify-center mb-8">
+              {/* CENTERED LOGO - Pulled UP with negative margin so it doesn't push your text down! */}
+              <div className="flex justify-center -mt-24 mb-6 relative z-20">
                 <img
                   src="/logo-v4.png"
                   alt="Silveyra Dispatch Services Logo"
