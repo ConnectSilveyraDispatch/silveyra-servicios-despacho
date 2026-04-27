@@ -14,7 +14,6 @@ import {
   Headphones,
   Shield
 } from "lucide-react";
-import Link from 'next/link';
 
 export default function SilveyraDispatchServices() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -61,14 +60,6 @@ export default function SilveyraDispatchServices() {
               </button>
             </nav>
 
-            {/* Language Switcher */}
-            <div className="hidden md:flex items-center space-x-2 bg-green-50 rounded-lg p-1">
-              <span className="text-sm font-bold text-white bg-green-600 px-3 py-1.5 rounded">SPA</span>
-              <Link href="/en" className="text-sm font-semibold text-gray-600 hover:text-green-600 px-3 py-1.5 rounded transition-colors">
-                ENG
-              </Link>
-            </div>
-
             {/* Mobile Menu Button */}
             <button
               className="md:hidden"
@@ -100,7 +91,7 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section - Added extra padding (pt-40) so the giant logo doesn't cover the text */}
+      {/* Hero Section */}
       <section id="home" className="pt-40 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6 py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
