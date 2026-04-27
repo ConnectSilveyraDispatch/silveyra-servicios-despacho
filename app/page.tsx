@@ -37,7 +37,7 @@ export default function SilveyraDispatchServices() {
             {/* Logo - 5x Larger */}
             <div className="flex items-center space-x-3">
               <Image
-                src=src="/logo.png"
+                src="/logo.png"
                 alt="Silveyra Dispatch Services Logo"
                 width={200}
                 height={80}
