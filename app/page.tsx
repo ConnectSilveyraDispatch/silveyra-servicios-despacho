@@ -83,16 +83,16 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section - Reduced top padding to pt-24 to pull the whole section UP */}
-      <section id="home" className="pt-24 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section - Pulled the whole section UP (pt-20) */}
+      <section id="home" className="pt-20 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6 py-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             
-            {/* Left Column - Main Content - Aggressively pulled UP (-mt-16 to -mt-24) */}
-            <div className="relative -mt-16 lg:-mt-24">
+            {/* Left Column - Main Content */}
+            <div className="relative">
               
-              {/* CENTERED LOGO - Aggressively pulling the badge UP into the transparent space (-mb-24) */}
-              <div className="flex justify-center -mb-24 relative z-20">
+              {/* CENTERED LOGO - Pushed much higher up (-mt-28) and added a strict gap below it (mb-6) so it DOES NOT touch the words! */}
+              <div className="flex justify-center -mt-28 mb-6 relative z-20">
                 <img
                   src="/logo-v4.png"
                   alt="Silveyra Dispatch Services Logo"
@@ -104,25 +104,25 @@ export default function SilveyraDispatchServices() {
                 />
               </div>
 
-              {/* CENTERED Badge - Tightened spacing */}
-              <div className="flex justify-center mb-3 relative z-30">
+              {/* CENTERED Badge */}
+              <div className="flex justify-center mb-4 relative z-30">
                 <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm">
                   ✨ Servicio de Despacho Profesional
                 </div>
               </div>
              
-              {/* Tightened spacing on all text elements below */}
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2 leading-tight text-center relative z-30">
+              {/* Text Elements */}
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-3 leading-tight text-center relative z-30">
                 DESPACHO DE CAMIONES
               </h1>
-              <p className="text-2xl font-semibold text-green-600 mb-4 text-center relative z-30">
+              <p className="text-2xl font-semibold text-green-600 mb-5 text-center relative z-30">
                 Para Dueños Operadores
               </p>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed text-center md:text-left relative z-30">
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed text-center md:text-left relative z-30">
                 Nuestros despachadores de camiones trabajan para conseguirte cargas, manejar todo el papeleo, mientras tú conduces y ganas dinero. Nos enfocamos en hacer crecer tu negocio y maximizar tus ganancias.
               </p>
 
-              <div className="flex justify-center mb-6 relative z-30">
+              <div className="flex justify-center mb-8 relative z-30">
                 <a 
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
