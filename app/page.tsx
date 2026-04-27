@@ -29,24 +29,20 @@ export default function SilveyraDispatchServices() {
   return (
     <div className="flex flex-col min-h-screen bg-white relative">
       
-      {/* GIANT LOGO - Attached to the top of the page, NOT the fixed header. 
-          It will overlap the header, but scroll away when you scroll down! */}
-      <div className="absolute top-0 left-0 w-full z-[100] pointer-events-none">
-        <div className="container mx-auto px-4 lg:px-6">
-          <Image
-            src="/logo.png"
-            alt="Silveyra Dispatch Services Logo"
-            width={750}
-            height={270}
-            unoptimized
-            className="mix-blend-multiply pointer-events-auto"
-            style={{
-              width: 'min(90vw, 750px)',
-              height: 'auto',
-              marginTop: '10px'
-            }}
-          />
-        </div>
+      {/* LOGO - 250px wide, Overlapping the header, True Transparency */}
+      <div className="absolute top-2 left-4 lg:left-12 z-[100] pointer-events-none">
+        <Image
+          src="/logo.png"
+          alt="Silveyra Dispatch Services Logo"
+          width={250}
+          height={90}
+          unoptimized
+          className="pointer-events-auto"
+          style={{
+            width: '250px',
+            height: 'auto'
+          }}
+        />
       </div>
 
       {/* Navigation Header - Locked height */}
@@ -55,7 +51,7 @@ export default function SilveyraDispatchServices() {
           <div className="flex items-center justify-between h-full">
             
             {/* Invisible Placeholder so the menu stays on the right side */}
-            <div className="w-[200px] md:w-[350px] h-full"></div>
+            <div className="w-[250px] h-full"></div>
            
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
@@ -104,8 +100,8 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section id="home" className="pt-40 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section - Pushed down so the header doesn't cover it */}
+      <section id="home" className="pt-36 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6 py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Main Content */}
@@ -128,10 +124,13 @@ export default function SilveyraDispatchServices() {
               </p>
 
               <div className="flex justify-center mb-8">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="text-lg px-8 font-bold border-0 hover:opacity-90 transition-opacity" style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}>
-                    ¡Comienza Ahora!
-                  </Button>
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 py-4 rounded-md font-bold shadow-lg transition-all transform hover:scale-105"
+                >
+                  ¡Comienza Ahora!
                 </a>
               </div>
 
@@ -457,10 +456,14 @@ export default function SilveyraDispatchServices() {
             </div>
 
             <div className="text-center">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="text-xl px-12 py-6 font-bold shadow-2xl border-0 hover:opacity-90 transition-opacity" style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}>
-                  Regístrate Ahora
-                </Button>
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center text-xl px-12 py-6 rounded-md font-bold shadow-2xl transition-all transform hover:scale-105"
+                style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}
+              >
+                Regístrate Ahora
               </a>
             </div>
           </div>
