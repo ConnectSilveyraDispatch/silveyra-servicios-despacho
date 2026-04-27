@@ -83,16 +83,16 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section - Removed vertical centering so the whole section naturally sits HIGHER UP! */}
-      <section id="home" className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section - Removed the floating center code. It now starts exactly below the header! */}
+      <section id="home" className="pt-28 md:pt-32 pb-16 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             
             {/* Left Column - Main Content */}
-            <div className="relative">
+            <div>
               
-              {/* CENTERED LOGO - No negative margins. Sits perfectly below header with a small 1/4 inch gap below it (mb-4) */}
-              <div className="flex justify-center mb-4 relative z-20">
+              {/* CENTERED LOGO - No negative margins. Sits perfectly below header with a small 1/4 inch gap below it (mb-3) */}
+              <div className="flex justify-center mb-3">
                 <img
                   src="/logo-v4.png"
                   alt="Silveyra Dispatch Services Logo"
@@ -104,25 +104,25 @@ export default function SilveyraDispatchServices() {
                 />
               </div>
 
-              {/* CENTERED Badge */}
-              <div className="flex justify-center mb-4 relative z-30">
+              {/* CENTERED Badge - Tightened spacing */}
+              <div className="flex justify-center mb-3">
                 <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm">
                   ✨ Servicio de Despacho Profesional
                 </div>
               </div>
              
-              {/* Text Elements */}
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight text-center relative z-30">
+              {/* Tightened spacing on all text elements below so the button stays high up */}
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2 leading-tight text-center">
                 DESPACHO DE CAMIONES
               </h1>
-              <p className="text-2xl font-semibold text-green-600 mb-4 text-center relative z-30">
+              <p className="text-2xl font-semibold text-green-600 mb-3 text-center">
                 Para Dueños Operadores
               </p>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed text-center md:text-left relative z-30">
+              <p className="text-lg text-gray-700 mb-5 leading-relaxed text-center md:text-left">
                 Nuestros despachadores de camiones trabajan para conseguirte cargas, manejar todo el papeleo, mientras tú conduces y ganas dinero. Nos enfocamos en hacer crecer tu negocio y maximizar tus ganancias.
               </p>
 
-              <div className="flex justify-center mb-6 relative z-30">
+              <div className="flex justify-center mb-5">
                 <a 
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
@@ -133,7 +133,7 @@ export default function SilveyraDispatchServices() {
                 </a>
               </div>
 
-              <div className="flex justify-center items-center space-x-3 text-gray-700 relative z-30">
+              <div className="flex justify-center items-center space-x-3 text-gray-700">
                 <Phone className="w-5 h-5 text-green-600" />
                 <a href="tel:4692465756" className="text-xl font-bold hover:text-green-600 transition-colors">
                   (469) 246-5756
