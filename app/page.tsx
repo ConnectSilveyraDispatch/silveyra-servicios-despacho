@@ -28,16 +28,15 @@ export default function SilveyraDispatchServices() {
   return (
     <div className="flex flex-col min-h-screen bg-white relative">
       
-      {/* LOGO - 250px wide, Overlapping the header, Magic Melting Transparency */}
+      {/* LOGO - 250px wide, Overlapping the header, True Transparency */}
       <div className="absolute top-2 left-4 lg:left-12 z-[100] pointer-events-none">
         <img
-          src="/logo-v3.png"
+          src="/logo-v4.png"
           alt="Silveyra Dispatch Services Logo"
           className="pointer-events-auto"
           style={{
             width: '250px',
-            height: 'auto',
-            mixBlendMode: 'multiply' /* This melts the fake checkerboard away! */
+            height: 'auto'
           }}
         />
       </div>
