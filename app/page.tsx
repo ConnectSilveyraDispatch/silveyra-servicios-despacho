@@ -1,153 +1,420 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { Phone, Mail, Menu, Truck, DollarSign, Clock, Shield } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Menu,
+  X,
+  Phone,
+  CheckCircle,
+  Users,
+  Truck,
+  DollarSign,
+  Headphones,
+  Shield
+} from "lucide-react";
+import Link from 'next/link';
 
 export default function SilveyraDispatchServices() {
-  return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation Header */}
-      <header className="bg-white border-b-4 border-blue-600 shadow-sm">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <Truck className="w-10 h-10 text-blue-600" />
-              <div>
-                <h1 className="text-xl font-bold text-blue-600">SILVEYRA</h1>
-                <p className="text-sm text-gray-600">Dispatch Services</p>
-              </div>
-            </div>
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col min-h-screen bg-white">
+      {/* Navigation Header */}
+      <header className="fixed top-0 w-full bg-white shadow-md z-50">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo - 5x Larger */}
+            <div className="flex items-center space-x-3">
+              <Image
+                src="https://i.imgur.com/yS5Uxdv.png"
+                alt="Silveyra Dispatch Services Logo"
+                width={200}
+                height={80}
+                unoptimized
+                className="object-contain"
+              />
+            </div>
+           
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors uppercase">Home</a>
-              <a href="#register" className="text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors uppercase">Register</a>
-              <a href="#faq" className="text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors uppercase">FAQ</a>
-              <a href="#about" className="text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors uppercase">About Us</a>
-              <a href="#contact" className="text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors uppercase">Contact</a>
+            <nav className="hidden md:flex space-x-8">
+              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+                Inicio
+              </button>
+              <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+                Precios
+              </button>
+              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+                Nosotros
+              </button>
+              <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+                FAQ
+              </button>
             </nav>
 
-            {/* Contact Info */}
-            <div className="hidden lg:block text-right">
-              <p className="text-sm font-bold text-blue-600">Silveyra Dispatch</p>
-              <p className="text-xs text-gray-600">Truck Dispatch Service</p>
+            {/* Language Switcher */}
+            <div className="hidden md:flex items-center space-x-2 bg-green-50 rounded-lg p-1">
+              <span className="text-sm font-bold text-white bg-green-600 px-3 py-1.5 rounded">SPA</span>
+              <Link href="/en" className="text-sm font-semibold text-gray-600 hover:text-green-600 px-3 py-1.5 rounded transition-colors">
+                ENG
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden">
-              <Menu className="w-6 h-6 text-gray-700" />
+            <button
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <nav className="md:hidden py-4 border-t">
+              <div className="flex flex-col space-y-4">
+                <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-green-600 font-medium text-left">
+                  Inicio
+                </button>
+                <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-green-600 font-medium text-left">
+                  Precios
+                </button>
+                <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-green-600 font-medium text-left">
+                  Nosotros
+                </button>
+                <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-green-600 font-medium text-left">
+                  FAQ
+                </button>
+              </div>
+            </nav>
+          )}
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section id="home" className="pt-20 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
+        <div className="container mx-auto px-4 lg:px-6 py-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Main Content */}
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">
-                Truck Dispatching Services
-              </h2>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Our truck dispatchers work to get you loads, handle all the paperwork, while you drive and get paid. We focus on growing your business and maximizing your profits.
+              {/* CENTERED Badge */}
+              <div className="flex justify-center mb-6">
+                <div className="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+                  ✨ Servicio de Despacho Profesional
+                </div>
+              </div>
+             
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight text-center">
+                DESPACHO DE CAMIONES
+              </h1>
+              <p className="text-2xl font-semibold text-green-600 mb-6 text-center">
+                Para Dueños Operadores
               </p>
-              <div className="bg-blue-600 text-white p-6 rounded-lg shadow-lg">
-                <p className="text-2xl font-bold text-center">
-                  WE HELP GROW YOUR BUSINESS FOR ONLY <span className="text-3xl">5%</span> OF THE LOAD
-                </p>
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                Nuestros despachadores de camiones trabajan para conseguirte cargas, manejar todo el papeleo, mientras tú conduces y ganas dinero. Nos enfocamos en hacer crecer tu negocio y maximizar tus ganancias.
+              </p>
+
+              <div className="flex justify-center mb-8">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 text-lg px-8 font-bold">
+                    ¡Comienza Ahora!
+                  </Button>
+                </a>
+              </div>
+
+              <div className="flex justify-center items-center space-x-3 text-gray-700">
+                <Phone className="w-5 h-5 text-green-600" />
+                <a href="tel:4692465756" className="text-xl font-bold hover:text-green-600 transition-colors">
+                  (469) 246-5756
+                </a>
               </div>
             </div>
 
-            {/* Right Column - Contact & CTA */}
-            <div className="bg-white p-8 rounded-lg shadow-xl border-2 border-blue-100">
-              <Button className="w-full bg-black hover:bg-gray-800 text-white text-lg py-6 mb-6 rounded-lg">
-                Start Now! →
-              </Button>
+            {/* Right Column - Family Business Card */}
+            <div>
+              <Card className="border-4 border-green-500 shadow-2xl">
+                <CardContent className="p-8">
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full mb-4">
+                      <Users className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-3xl font-bold text-green-700 mb-2">
+                      NEGOCIO FAMILIAR
+                    </h3>
+                    <p className="text-green-600 font-semibold">
+                      ATENCIÓN PERSONALIZADA GARANTIZADA
+                    </p>
+                  </div>
 
-              <div className="flex items-center justify-center space-x-3 mb-4">
-                <Phone className="w-6 h-6 text-blue-600" />
-                <a href="tel:4075051159" className="text-2xl font-bold text-gray-900 hover:text-blue-600">
-                  (407) 505-1159
-                </a>
-              </div>
-              <p className="text-center text-gray-600 italic mb-6">
-                Any questions? Call us!
-              </p>
+                  <div className="bg-green-50 rounded-lg p-6 mb-6">
+                    <p className="text-gray-700 italic text-center text-lg leading-relaxed">
+                      "No eres solo un número para nosotros. Somos una familia que trabaja para hacer crecer TU negocio como si fuera el nuestro."
+                    </p>
+                  </div>
 
-              <div className="space-y-3 text-gray-700">
-                <div className="flex items-start space-x-2">
-                  <span className="text-blue-600 font-bold">•</span>
-                  <p>Dispatch Service for Owner Operators</p>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <span className="text-blue-600 font-bold">•</span>
-                  <p>Must Have a Dry Van, Reefer, Flatbed or Power-Only Trailer</p>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <span className="text-blue-600 font-bold">•</span>
-                  <p>Must Have an Active Authority in Good Standing</p>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <span className="text-blue-600 font-bold">•</span>
-                  <p>Must Have a Bank Account, Zelle or PayPal for Payment</p>
-                </div>
-              </div>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                      <div>
+                        <p className="font-bold text-gray-900">Trato Personal y Directo</p>
+                        <p className="text-sm text-gray-600">Te acompañamos desde la salida y hasta tu destino!</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                      <div>
+                        <p className="font-bold text-gray-900">Disponibles 24/7 Cuando Nos Necesites</p>
+                        <p className="text-sm text-gray-600">Soporte real en la carretera, no mensajes automáticos</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                      <div>
+                        <p className="font-bold text-gray-900">Tu Éxito es Nuestro Éxito</p>
+                        <p className="text-sm text-gray-600">Crecemos juntos - tu ganancia es nuestra meta</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                      <div>
+                        <p className="font-bold text-gray-900">Respetamos Tu Tiempo y Descanso</p>
+                        <p className="text-sm text-gray-600">Texto primero - llamadas solo cuando tú quieras</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="bg-blue-600 py-12">
-        <div className="container mx-auto px-6">
+      {/* Benefits Section - WITH COLORFUL ICONS */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Por Qué Elegirnos
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Beneficios que marcan la diferencia
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Benefit 1 */}
-            <Card className="bg-white border-none shadow-lg">
-              <CardContent className="p-6 text-center">
-                <div className="flex justify-center mb-4">
-                  <DollarSign className="w-12 h-12 text-blue-600" />
+            {/* Tarifas Competitivas - YELLOW/GOLD Dollar Sign */}
+            <Card className="border-2 border-yellow-100 hover:border-yellow-500 hover:shadow-xl transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mb-6 shadow-lg">
+                  <DollarSign className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Competitive Rates
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Tarifas Competitivas
                 </h3>
-                <p className="text-gray-600">
-                  Only 5% commission on loads. We work hard to maximize your earnings and keep more money in your pocket.
+                <p className="text-gray-600 leading-relaxed">
+                  Precios flexibles del 5% al 9% según el nivel de servicio. Trabajamos duro para maximizar tus ganancias y mantener más dinero en tu bolsillo.
                 </p>
               </CardContent>
             </Card>
 
-            {/* Benefit 2 */}
-            <Card className="bg-white border-none shadow-lg">
-              <CardContent className="p-6 text-center">
-                <div className="flex justify-center mb-4">
-                  <Clock className="w-12 h-12 text-blue-600" />
+            {/* Soporte 24/7 - BLUE Headphones */}
+            <Card className="border-2 border-blue-100 hover:border-blue-500 hover:shadow-xl transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mb-6 shadow-lg">
+                  <Headphones className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  24/7 Support
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Soporte 24/7
                 </h3>
-                <p className="text-gray-600">
-                  Round-the-clock dispatch support to keep you moving. We're always available when you need us on the road.
+                <p className="text-gray-600 leading-relaxed">
+                  Soporte de despacho las 24 horas para mantenerte en movimiento. Siempre estamos disponibles cuando nos necesites en el camino.
                 </p>
               </CardContent>
             </Card>
 
-            {/* Benefit 3 */}
-            <Card className="bg-white border-none shadow-lg">
-              <CardContent className="p-6 text-center">
-                <div className="flex justify-center mb-4">
-                  <Shield className="w-12 h-12 text-blue-600" />
+            {/* Servicio Confiable - PURPLE Shield */}
+            <Card className="border-2 border-purple-100 hover:border-purple-500 hover:shadow-xl transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mb-6 shadow-lg">
+                  <Shield className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Reliable Service
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Servicio Confiable
                 </h3>
-                <p className="text-gray-600">
-                  Professional dispatchers dedicated to finding you the best loads and handling all paperwork efficiently.
+                <p className="text-gray-600 leading-relaxed">
+                  Despachadores profesionales dedicados a encontrarte las mejores cargas y manejar todo el papeleo eficientemente.
                 </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section - MATCHING IMAGE DESIGN */}
+      <section id="pricing" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Nuestros Planes de Asociación
+            </h2>
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto">
+              En Silveyra Dispatch, creemos en una verdadera asociación. Cobramos un porcentaje por carga porque alinea nuestros objetivos con los tuyos: solo ganamos más dinero cuando negociamos tarifas más altas para tu camión.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Plan 1: Basic Dispatch (5%) */}
+            <Card className="bg-white shadow-lg hover:shadow-2xl transition-all">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Basic Dispatch</h3>
+                  <div className="text-5xl font-bold text-green-600 mb-2">5%</div>
+                  <p className="text-gray-600 font-medium">Por Carga</p>
+                </div>
+
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Reserva Premium de Cargas</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Negociación de Tarifas</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Confirmaciones de Carga</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Verificación de Crédito de Brokers</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Gestión de Paquetes de Configuración</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Sin Despacho Forzado</p>
+                  </div>
+                </div>
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold">
+                    Comenzar
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Plan 2: Dispatch Plus (7%) - POPULAR */}
+            <Card className="bg-white shadow-2xl border-4 border-green-600 relative transform md:scale-105">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-green-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                  MÁS POPULAR
+                </span>
+              </div>
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Dispatch Plus</h3>
+                  <div className="text-5xl font-bold text-green-600 mb-2">7%</div>
+                  <p className="text-gray-600 font-medium">Por Carga</p>
+                </div>
+
+                <p className="font-bold text-green-600 mb-4 text-sm">Todo en Basic Dispatch, MÁS:</p>
+
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Soporte 24/7</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Seguimiento de Carga Completo</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Comunicación con Brokers/Shippers</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Facturación y Cobranza</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Seguimiento de Millaje</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Reportes Semanales de Rendimiento</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Gestión de PODs</p>
+                  </div>
+                </div>
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold">
+                    Comenzar
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Plan 3: Dispatch VIP (9%) */}
+            <Card className="bg-white shadow-lg hover:shadow-2xl transition-all">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Dispatch VIP</h3>
+                  <div className="text-5xl font-bold text-green-600 mb-2">9%</div>
+                  <p className="text-gray-600 font-medium">Por Carga</p>
+                </div>
+
+                <p className="font-bold text-green-600 mb-4 text-sm">Todo en Dispatch Plus, MÁS:</p>
+
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Seguimiento Completo de Gastos</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Estados de Pérdidas y Ganancias (P&L)</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Reportes IFTA Trimestrales</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Gestión y Organización de Recibos</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Preparación para Temporada de Impuestos</p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm">Análisis Financiero Mensual</p>
+                  </div>
+                </div>
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold">
+                    Comenzar
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -155,88 +422,153 @@ export default function SilveyraDispatchServices() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-blue-600 mb-6">About Silveyra Dispatch Services</h2>
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              At Silveyra Dispatch Services, we understand the challenges owner-operators face in the trucking industry. Our mission is to help you focus on what you do best - driving - while we handle the rest.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              With years of experience in truck dispatching, we provide personalized service to each client, ensuring you get the best loads at competitive rates. Our team works tirelessly to grow your business and maximize your profitability.
-            </p>
+      <section id="about" className="py-16 bg-white">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                Acerca de Silveyra Dispatch Services
+              </h2>
+              <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
+            </div>
+           
+            <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 md:p-12 shadow-lg mb-12">
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                En Silveyra Dispatch Services, entendemos los desafíos que enfrentan los dueños-operadores en la industria del transporte. Nuestra misión es ayudarte a enfocarte en lo que mejor haces - conducir - mientras nosotros manejamos el resto.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Con años de experiencia en despacho de camiones y contabilidad profesional, brindamos servicio personalizado a cada cliente, asegurando que obtengas las mejores cargas a tarifas competitivas. Nuestro equipo trabaja incansablemente para hacer crecer tu negocio y maximizar tu rentabilidad.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 text-xl px-12 py-6 font-bold shadow-2xl">
+                  Regístrate Ahora
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-blue-600 mb-12 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">What is your commission rate?</h3>
-                <p className="text-gray-700">We charge only 5% of the gross load amount. This competitive rate ensures you keep more of your hard-earned money.</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">What equipment do you dispatch?</h3>
-                <p className="text-gray-700">We dispatch Dry Van, Reefer, Flatbed, and Power-Only trailers. If you have specialized equipment, contact us to discuss your needs.</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Do I need my own authority?</h3>
-                <p className="text-gray-700">Yes, you must have an active MC authority in good standing to use our dispatch services.</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">How do I get paid?</h3>
-                <p className="text-gray-700">We support various payment methods including direct bank transfer, Zelle, and PayPal for your convenience.</p>
-              </CardContent>
-            </Card>
+      <section id="faq" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Preguntas Frecuentes
+            </h2>
+            <div className="w-24 h-1 bg-green-600 mx-auto"></div>
           </div>
-        </div>
-      </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-blue-600 text-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-xl mb-8">Contact us today and let's grow your trucking business together!</p>
-            
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
-              <a href="tel:4075051159" className="flex items-center space-x-3 text-2xl font-bold hover:text-blue-200 transition-colors">
-                <Phone className="w-8 h-8" />
-                <span>(407) 505-1159</span>
-              </a>
-              <a href="mailto:info@silveyradispatch.com" className="flex items-center space-x-3 text-xl hover:text-blue-200 transition-colors">
-                <Mail className="w-6 h-6" />
-                <span>info@silveyradispatch.com</span>
-              </a>
-            </div>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <Card className="border-2 border-green-100 hover:border-green-500 transition-all">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  ¿Cuáles son sus tarifas de comisión?
+                </h3>
+                <p className="text-gray-700">
+                  Ofrecemos tres planes flexibles: 5% para despacho básico, 7% para despacho más soporte administrativo, y 9% para nuestro paquete VIP completo con contabilidad profesional.
+                </p>
+              </CardContent>
+            </Card>
 
-            <Button className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-6 rounded-lg font-bold">
-              Register Now →
-            </Button>
+            <Card className="border-2 border-green-100 hover:border-green-500 transition-all">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  ¿Qué equipos despachan?
+                </h3>
+                <p className="text-gray-700">
+                  Despachamos remolques Dry Van, Flatbed y Power-Only. Si tienes equipo especializado, contáctanos para discutir tus necesidades.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-green-100 hover:border-green-500 transition-all">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  ¿Necesito mi propia autoridad?
+                </h3>
+                <p className="text-gray-700">
+                  Sí, debes tener autoridad MC activa en buen estado para usar nuestros servicios de despacho.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-green-100 hover:border-green-500 transition-all">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  ¿Cómo me pagan?
+                </h3>
+                <p className="text-gray-700">
+                  Soportamos varios métodos de pago incluyendo transferencia bancaria directa, Zelle y PayPal para tu conveniencia.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-green-100 hover:border-green-500 transition-all">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  ¿Qué significa Sin Despacho Forzado?
+                </h3>
+                <p className="text-gray-700">
+                  Negociamos las mejores tarifas y te presentamos opciones de carga, pero tú siempre tienes la última palabra. Nunca te forzamos a tomar una carga que no quieres.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-gray-400">© 2024 Silveyra Dispatch Services. All rights reserved.</p>
-          <p className="text-gray-500 text-sm mt-2">Professional Truck Dispatching for Owner Operators</p>
+      <footer className="bg-green-900 text-white py-12">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="bg-green-600 rounded-lg p-2">
+                  <Truck className="h-8 w-8 text-white" />
+                </div>
+                <span className="text-xl font-bold">Silveyra Dispatch Services</span>
+              </div>
+              <p className="text-green-200">
+                Despacho Profesional de Camiones para Dueños Operadores
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-lg mb-4">Enlaces Rápidos</h4>
+              <div className="space-y-2">
+                <button onClick={() => scrollToSection('home')} className="block text-green-200 hover:text-white">
+                  Inicio
+                </button>
+                <button onClick={() => scrollToSection('pricing')} className="block text-green-200 hover:text-white">
+                  Precios
+                </button>
+                <button onClick={() => scrollToSection('about')} className="block text-green-200 hover:text-white">
+                  Nosotros
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-lg mb-4">Contacto</h4>
+              <div className="space-y-2 text-green-200">
+                <p>Teléfono: (469) 246-5756</p>
+                <p>Email: Connect@SilveyraDispatch.com</p>
+                <p>Disponible 24/7</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-green-800 pt-8 text-center text-green-200">
+            <p>© 2024 Silveyra Dispatch Services. Todos los derechos reservados.</p>
+          </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
+
+// END OF FILE
