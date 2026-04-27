@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Button } from "@/components/ui/button";
 import {
   Menu,
   X,
@@ -28,27 +27,20 @@ export default function SilveyraDispatchServices() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Navigation Header - Locked height */}
-      <header className="fixed top-0 w-full bg-white shadow-md z-50 h-24">
+      {/* Navigation Header - Taller to fit the logo perfectly */}
+      <header className="fixed top-0 w-full bg-white shadow-md z-50 h-28">
         <div className="container mx-auto px-4 lg:px-6 h-full">
           <div className="flex items-center justify-between h-full">
             
-            {/* Logo - 4x Larger, Breakout Positioning to overlap the line */}
-            <div className="relative z-50 flex items-center" style={{ width: '280px' }}>
+            {/* Logo - Safely contained inside the white header */}
+            <div className="flex items-center h-full py-2">
               <Image
                 src="/logo.png"
                 alt="Silveyra Dispatch Services Logo"
-                width={600}
-                height={250}
+                width={300}
+                height={100}
                 unoptimized
-                className="object-contain mix-blend-multiply absolute"
-                style={{ 
-                  width: '380px', 
-                  height: 'auto', 
-                  top: '-20px', 
-                  left: '0px', 
-                  maxWidth: 'none' 
-                }}
+                className="object-contain h-full w-auto mix-blend-multiply"
               />
             </div>
            
@@ -73,24 +65,24 @@ export default function SilveyraDispatchServices() {
               className="md:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X className="h-6 w-6 text-black" /> : <Menu className="h-6 w-6 text-black" />}
+              {mobileMenuOpen ? <X className="h-8 w-8 text-black" /> : <Menu className="h-8 w-8 text-black" />}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <nav className="md:hidden py-4 border-t bg-white shadow-lg absolute w-full left-0">
+            <nav className="md:hidden py-4 border-t bg-white shadow-lg absolute w-full left-0 top-28 z-[900]">
               <div className="flex flex-col space-y-4 px-4">
-                <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-green-600 font-medium text-left">
+                <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-green-600 font-medium text-left text-lg">
                   Inicio
                 </button>
-                <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-green-600 font-medium text-left">
+                <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-green-600 font-medium text-left text-lg">
                   Precios
                 </button>
-                <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-green-600 font-medium text-left">
+                <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-green-600 font-medium text-left text-lg">
                   Nosotros
                 </button>
-                <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-green-600 font-medium text-left">
+                <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-green-600 font-medium text-left text-lg">
                   FAQ
                 </button>
               </div>
@@ -99,8 +91,8 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section id="home" className="pt-32 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section - Pushed down so the header doesn't cover it */}
+      <section id="home" className="pt-36 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6 py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Main Content */}
@@ -123,11 +115,13 @@ export default function SilveyraDispatchServices() {
               </p>
 
               <div className="flex justify-center mb-8">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                  {/* Bulletproof Orange-Yellow Button */}
-                  <Button size="lg" className="text-lg px-8 font-bold border-0 hover:opacity-90 transition-opacity" style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}>
-                    ¡Comienza Ahora!
-                  </Button>
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 py-4 rounded-md font-bold shadow-lg transition-all transform hover:scale-105"
+                >
+                  ¡Comienza Ahora!
                 </a>
               </div>
 
@@ -308,10 +302,13 @@ export default function SilveyraDispatchServices() {
                   </div>
                 </div>
 
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold">
-                    Comenzar
-                  </Button>
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full bg-amber-500 hover:bg-amber-600 text-white py-3 rounded-md font-bold shadow-md transition-colors"
+                >
+                  Comenzar
                 </a>
               </div>
             </div>
@@ -363,10 +360,13 @@ export default function SilveyraDispatchServices() {
                   </div>
                 </div>
 
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold">
-                    Comenzar
-                  </Button>
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full bg-amber-500 hover:bg-amber-600 text-white py-3 rounded-md font-bold shadow-md transition-colors"
+                >
+                  Comenzar
                 </a>
               </div>
             </div>
@@ -409,10 +409,13 @@ export default function SilveyraDispatchServices() {
                   </div>
                 </div>
 
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold">
-                    Comenzar
-                  </Button>
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full bg-amber-500 hover:bg-amber-600 text-white py-3 rounded-md font-bold shadow-md transition-colors"
+                >
+                  Comenzar
                 </a>
               </div>
             </div>
@@ -441,11 +444,13 @@ export default function SilveyraDispatchServices() {
             </div>
 
             <div className="text-center">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                {/* Bulletproof Orange-Yellow Button */}
-                <Button size="lg" className="text-xl px-12 py-6 font-bold shadow-2xl border-0 hover:opacity-90 transition-opacity" style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}>
-                  Regístrate Ahora
-                </Button>
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-xl px-12 py-6 rounded-md font-bold shadow-2xl transition-all transform hover:scale-105"
+              >
+                Regístrate Ahora
               </a>
             </div>
           </div>
