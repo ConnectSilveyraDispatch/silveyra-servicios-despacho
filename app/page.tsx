@@ -83,15 +83,15 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section - Reduced top padding (pt-28) to pull the whole section UP */}
+      {/* Hero Section */}
       <section id="home" className="pt-28 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6 py-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Main Content */}
             <div>
               
-              {/* CENTERED LOGO - Tightened bottom margin to pull text up! */}
-              <div className="flex justify-center -mt-8 mb-3 relative z-20">
+              {/* CENTERED LOGO - Aggressively pulled UP to the header (-mt-20) and pulling the badge UP into the transparent space (-mb-10) */}
+              <div className="flex justify-center -mt-20 -mb-10 relative z-20">
                 <img
                   src="/logo-v4.png"
                   alt="Silveyra Dispatch Services Logo"
@@ -104,35 +104,35 @@ export default function SilveyraDispatchServices() {
               </div>
 
               {/* CENTERED Badge - Tightened spacing */}
-              <div className="flex justify-center mb-3">
+              <div className="flex justify-center mb-3 relative z-30">
                 <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold">
                   ✨ Servicio de Despacho Profesional
                 </div>
               </div>
              
               {/* Tightened spacing on all text elements below */}
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2 leading-tight text-center">
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2 leading-tight text-center relative z-30">
                 DESPACHO DE CAMIONES
               </h1>
-              <p className="text-2xl font-semibold text-green-600 mb-4 text-center">
+              <p className="text-2xl font-semibold text-green-600 mb-4 text-center relative z-30">
                 Para Dueños Operadores
               </p>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed text-center md:text-left">
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed text-center md:text-left relative z-30">
                 Nuestros despachadores de camiones trabajan para conseguirte cargas, manejar todo el papeleo, mientras tú conduces y ganas dinero. Nos enfocamos en hacer crecer tu negocio y maximizar tus ganancias.
               </p>
 
-              <div className="flex justify-center mb-6">
+              <div className="flex justify-center mb-6 relative z-30">
                 <a 
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 py-3 rounded-md font-bold shadow-lg transition-all transform hover:scale-105"
+                  className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 py-4 rounded-md font-bold shadow-lg transition-all transform hover:scale-105"
                 >
                   ¡Comienza Ahora!
                 </a>
               </div>
 
-              <div className="flex justify-center items-center space-x-3 text-gray-700">
+              <div className="flex justify-center items-center space-x-3 text-gray-700 relative z-30">
                 <Phone className="w-5 h-5 text-green-600" />
                 <a href="tel:4692465756" className="text-xl font-bold hover:text-green-600 transition-colors">
                   (469) 246-5756
