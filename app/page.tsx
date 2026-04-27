@@ -28,19 +28,27 @@ export default function SilveyraDispatchServices() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Navigation Header - Locked height to prevent blocking */}
+      {/* Navigation Header - Locked height */}
       <header className="fixed top-0 w-full bg-white shadow-md z-50 h-24">
         <div className="container mx-auto px-4 lg:px-6 h-full">
           <div className="flex items-center justify-between h-full">
-            {/* Logo - Half Size & Transparent */}
-            <div className="flex items-center h-full py-2">
+            
+            {/* Logo - 4x Larger, Breakout Positioning to overlap the line */}
+            <div className="relative z-50 flex items-center" style={{ width: '280px' }}>
               <Image
                 src="/logo.png"
                 alt="Silveyra Dispatch Services Logo"
-                width={250}
-                height={90}
+                width={600}
+                height={250}
                 unoptimized
-                className="object-contain h-full w-auto mix-blend-multiply"
+                className="object-contain mix-blend-multiply absolute"
+                style={{ 
+                  width: '380px', 
+                  height: 'auto', 
+                  top: '-20px', 
+                  left: '0px', 
+                  maxWidth: 'none' 
+                }}
               />
             </div>
            
@@ -91,7 +99,7 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section - Adjusted padding so it sits perfectly below the header */}
+      {/* Hero Section */}
       <section id="home" className="pt-32 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6 py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -116,7 +124,8 @@ export default function SilveyraDispatchServices() {
 
               <div className="flex justify-center mb-8">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 font-bold">
+                  {/* Bulletproof Orange-Yellow Button */}
+                  <Button size="lg" className="text-lg px-8 font-bold border-0 hover:opacity-90 transition-opacity" style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}>
                     ¡Comienza Ahora!
                   </Button>
                 </a>
@@ -433,7 +442,8 @@ export default function SilveyraDispatchServices() {
 
             <div className="text-center">
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white text-xl px-12 py-6 font-bold shadow-2xl">
+                {/* Bulletproof Orange-Yellow Button */}
+                <Button size="lg" className="text-xl px-12 py-6 font-bold shadow-2xl border-0 hover:opacity-90 transition-opacity" style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}>
                   Regístrate Ahora
                 </Button>
               </a>
