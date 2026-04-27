@@ -28,7 +28,7 @@ export default function SilveyraDispatchServices() {
   return (
     <div className="flex flex-col min-h-screen bg-white relative">
 
-      {/* Navigation Header - Locked height (h-24 = 96px) */}
+      {/* Navigation Header - Locked height (h-24) */}
       <header className="fixed top-0 w-full bg-white shadow-md z-50 h-24">
         <div className="container mx-auto px-4 lg:px-6 h-full">
           <div className="flex items-center justify-between h-full">
@@ -83,8 +83,8 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section - pt-24 starts EXACTLY at the bottom line of the header */}
-      <section id="home" className="pt-24 pb-16 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section - pt-24 starts EXACTLY at the bottom line of the header. Removed min-h-screen to stop stretching! */}
+      <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6">
           
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -92,8 +92,8 @@ export default function SilveyraDispatchServices() {
             {/* Left Column - Main Content */}
             <div className="flex flex-col items-center lg:items-start">
               
-              {/* LOGO - EXACTLY 4px from header (mt-[4px]) and 4px from badge (mb-[4px]) */}
-              <div className="flex justify-center w-full mt-[4px] mb-[4px]">
+              {/* LOGO - mt-0.5 is exactly 2px from header. mb-0.5 is exactly 2px from badge. */}
+              <div className="flex justify-center w-full mt-0.5 mb-0.5">
                 <img
                   src="/logo-v4.png"
                   alt="Silveyra Dispatch Services Logo"
@@ -105,15 +105,15 @@ export default function SilveyraDispatchServices() {
                 />
               </div>
 
-              {/* CENTERED Badge - 4px below logo */}
+              {/* CENTERED Badge - Sits 2px below logo */}
               <div className="flex justify-center w-full mb-2">
-                <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm">
+                <div className="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold shadow-sm">
                   ✨ Servicio de Despacho Profesional
                 </div>
               </div>
              
               {/* Text Elements - Tightly packed to pull everything UP */}
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2 leading-tight text-center w-full">
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-1 leading-tight text-center w-full">
                 DESPACHO DE CAMIONES
               </h1>
               <p className="text-2xl font-semibold text-green-600 mb-2 text-center w-full">
@@ -128,7 +128,7 @@ export default function SilveyraDispatchServices() {
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 py-4 rounded-md font-bold shadow-lg transition-all transform hover:scale-105"
+                  className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 py-3 rounded-md font-bold shadow-lg transition-all transform hover:scale-105"
                 >
                   ¡Comienza Ahora!
                 </a>
@@ -142,8 +142,8 @@ export default function SilveyraDispatchServices() {
               </div>
             </div>
 
-            {/* Right Column - Family Business Card - EXACTLY 16px from header (mt-[16px]) */}
-            <div className="mt-[16px]">
+            {/* Right Column - Family Business Card - mt-2 is exactly 8px from header */}
+            <div className="mt-2">
               <div className="bg-white border-4 border-green-500 shadow-2xl rounded-2xl overflow-hidden">
                 <div className="p-8">
                   <div className="text-center mb-6">
