@@ -28,7 +28,7 @@ export default function SilveyraDispatchServices() {
   return (
     <div className="flex flex-col min-h-screen bg-white relative">
 
-      {/* Navigation Header - Locked height, untouched! */}
+      {/* Navigation Header - Locked height (h-24 = 96px) */}
       <header className="fixed top-0 w-full bg-white shadow-md z-50 h-24">
         <div className="container mx-auto px-4 lg:px-6 h-full">
           <div className="flex items-center justify-between h-full">
@@ -83,18 +83,17 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section - pt-28 leaves exactly a tiny gap below the h-24 header */}
-      <section id="home" className="pt-28 pb-16 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section - pt-24 starts EXACTLY at the bottom line of the header */}
+      <section id="home" className="pt-24 pb-16 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6">
           
-          {/* CHANGED to items-start: This stops the text from being pushed down to the middle of the screen! */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start pt-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             
             {/* Left Column - Main Content */}
             <div className="flex flex-col items-center lg:items-start">
               
-              {/* CENTERED LOGO - Sits right at the top, almost touching the header. Small gap below it (mb-4) */}
-              <div className="flex justify-center w-full mb-4">
+              {/* LOGO - EXACTLY 4px from header (mt-[4px]) and 4px from badge (mb-[4px]) */}
+              <div className="flex justify-center w-full mt-[4px] mb-[4px]">
                 <img
                   src="/logo-v4.png"
                   alt="Silveyra Dispatch Services Logo"
@@ -106,25 +105,25 @@ export default function SilveyraDispatchServices() {
                 />
               </div>
 
-              {/* CENTERED Badge - Tightened spacing */}
-              <div className="flex justify-center w-full mb-3">
+              {/* CENTERED Badge - 4px below logo */}
+              <div className="flex justify-center w-full mb-2">
                 <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm">
                   ✨ Servicio de Despacho Profesional
                 </div>
               </div>
              
-              {/* Tightened spacing on all text elements below so the button stays high up */}
+              {/* Text Elements - Tightly packed to pull everything UP */}
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2 leading-tight text-center w-full">
                 DESPACHO DE CAMIONES
               </h1>
-              <p className="text-2xl font-semibold text-green-600 mb-3 text-center w-full">
+              <p className="text-2xl font-semibold text-green-600 mb-2 text-center w-full">
                 Para Dueños Operadores
               </p>
-              <p className="text-lg text-gray-700 mb-5 leading-relaxed text-center w-full">
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed text-center lg:text-left w-full">
                 Nuestros despachadores de camiones trabajan para conseguirte cargas, manejar todo el papeleo, mientras tú conduces y ganas dinero. Nos enfocamos en hacer crecer tu negocio y maximizar tus ganancias.
               </p>
 
-              <div className="flex justify-center w-full mb-5">
+              <div className="flex justify-center w-full mb-4">
                 <a 
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
@@ -143,8 +142,8 @@ export default function SilveyraDispatchServices() {
               </div>
             </div>
 
-            {/* Right Column - Family Business Card */}
-            <div className="pt-2 lg:pt-0">
+            {/* Right Column - Family Business Card - EXACTLY 16px from header (mt-[16px]) */}
+            <div className="mt-[16px]">
               <div className="bg-white border-4 border-green-500 shadow-2xl rounded-2xl overflow-hidden">
                 <div className="p-8">
                   <div className="text-center mb-6">
