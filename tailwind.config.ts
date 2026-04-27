@@ -13,4 +13,4 @@ const config: Config = {
   },
   plugins: [require("tailwindcss-animate")],
 };
-export default con
+export default config;
