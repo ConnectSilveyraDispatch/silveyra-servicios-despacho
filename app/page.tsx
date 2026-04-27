@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { Button } from "@/components/ui/button";
 import {
   Menu,
   X,
@@ -26,23 +27,35 @@ export default function SilveyraDispatchServices() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      {/* Navigation Header - Taller to fit the logo perfectly */}
-      <header className="fixed top-0 w-full bg-white shadow-md z-50 h-28">
+    <div className="flex flex-col min-h-screen bg-white relative">
+      
+      {/* GIANT LOGO - Attached to the top of the page, NOT the fixed header. 
+          It will overlap the header, but scroll away when you scroll down! */}
+      <div className="absolute top-0 left-0 w-full z-[100] pointer-events-none">
+        <div className="container mx-auto px-4 lg:px-6">
+          <Image
+            src="/logo.png"
+            alt="Silveyra Dispatch Services Logo"
+            width={750}
+            height={270}
+            unoptimized
+            className="mix-blend-multiply pointer-events-auto"
+            style={{
+              width: 'min(90vw, 750px)',
+              height: 'auto',
+              marginTop: '10px'
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Navigation Header - Locked height */}
+      <header className="fixed top-0 w-full bg-white shadow-md z-50 h-24">
         <div className="container mx-auto px-4 lg:px-6 h-full">
           <div className="flex items-center justify-between h-full">
             
-            {/* Logo - Safely contained inside the white header */}
-            <div className="flex items-center h-full py-2">
-              <Image
-                src="/logo.png"
-                alt="Silveyra Dispatch Services Logo"
-                width={300}
-                height={100}
-                unoptimized
-                className="object-contain h-full w-auto mix-blend-multiply"
-              />
-            </div>
+            {/* Invisible Placeholder so the menu stays on the right side */}
+            <div className="w-[200px] md:w-[350px] h-full"></div>
            
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
@@ -62,7 +75,7 @@ export default function SilveyraDispatchServices() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden"
+              className="md:hidden relative z-[1000]"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="h-8 w-8 text-black" /> : <Menu className="h-8 w-8 text-black" />}
@@ -71,7 +84,7 @@ export default function SilveyraDispatchServices() {
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <nav className="md:hidden py-4 border-t bg-white shadow-lg absolute w-full left-0 top-28 z-[900]">
+            <nav className="md:hidden py-4 border-t bg-white shadow-lg absolute w-full left-0 top-24 z-[900]">
               <div className="flex flex-col space-y-4 px-4">
                 <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-green-600 font-medium text-left text-lg">
                   Inicio
@@ -91,8 +104,8 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section - Pushed down so the header doesn't cover it */}
-      <section id="home" className="pt-36 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section */}
+      <section id="home" className="pt-40 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6 py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Main Content */}
@@ -115,13 +128,10 @@ export default function SilveyraDispatchServices() {
               </p>
 
               <div className="flex justify-center mb-8">
-                <a 
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 py-4 rounded-md font-bold shadow-lg transition-all transform hover:scale-105"
-                >
-                  ¡Comienza Ahora!
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="text-lg px-8 font-bold border-0 hover:opacity-90 transition-opacity" style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}>
+                    ¡Comienza Ahora!
+                  </Button>
                 </a>
               </div>
 
@@ -306,7 +316,8 @@ export default function SilveyraDispatchServices() {
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full bg-amber-500 hover:bg-amber-600 text-white py-3 rounded-md font-bold shadow-md transition-colors"
+                  className="inline-flex items-center justify-center w-full py-3 rounded-md font-bold shadow-md transition-colors hover:opacity-90"
+                  style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}
                 >
                   Comenzar
                 </a>
@@ -364,7 +375,8 @@ export default function SilveyraDispatchServices() {
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full bg-amber-500 hover:bg-amber-600 text-white py-3 rounded-md font-bold shadow-md transition-colors"
+                  className="inline-flex items-center justify-center w-full py-3 rounded-md font-bold shadow-md transition-colors hover:opacity-90"
+                  style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}
                 >
                   Comenzar
                 </a>
@@ -413,7 +425,8 @@ export default function SilveyraDispatchServices() {
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full bg-amber-500 hover:bg-amber-600 text-white py-3 rounded-md font-bold shadow-md transition-colors"
+                  className="inline-flex items-center justify-center w-full py-3 rounded-md font-bold shadow-md transition-colors hover:opacity-90"
+                  style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}
                 >
                   Comenzar
                 </a>
@@ -444,13 +457,10 @@ export default function SilveyraDispatchServices() {
             </div>
 
             <div className="text-center">
-              <a 
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-xl px-12 py-6 rounded-md font-bold shadow-2xl transition-all transform hover:scale-105"
-              >
-                Regístrate Ahora
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="text-xl px-12 py-6 font-bold shadow-2xl border-0 hover:opacity-90 transition-opacity" style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}>
+                  Regístrate Ahora
+                </Button>
               </a>
             </div>
           </div>
