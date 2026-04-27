@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Menu,
   X,
@@ -33,16 +32,16 @@ export default function SilveyraDispatchServices() {
       {/* Navigation Header */}
       <header className="fixed top-0 w-full bg-white shadow-md z-50">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo - 5x Larger */}
+          <div className="flex items-center justify-between py-4">
+            {/* Logo - 5x Larger & Transparent */}
             <div className="flex items-center space-x-3">
               <Image
                 src="/logo.png"
                 alt="Silveyra Dispatch Services Logo"
-                width={200}
-                height={80}
+                width={500}
+                height={180}
                 unoptimized
-                className="object-contain"
+                className="object-contain mix-blend-multiply"
               />
             </div>
            
@@ -75,7 +74,7 @@ export default function SilveyraDispatchServices() {
               className="md:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {mobileMenuOpen ? <X className="h-6 w-6 text-black" /> : <Menu className="h-6 w-6 text-black" />}
             </button>
           </div>
 
@@ -101,8 +100,8 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section id="home" className="pt-20 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section - Added extra padding (pt-40) so the giant logo doesn't cover the text */}
+      <section id="home" className="pt-40 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6 py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Main Content */}
@@ -126,7 +125,7 @@ export default function SilveyraDispatchServices() {
 
               <div className="flex justify-center mb-8">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 text-lg px-8 font-bold">
+                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 font-bold">
                     ¡Comienza Ahora!
                   </Button>
                 </a>
@@ -142,8 +141,8 @@ export default function SilveyraDispatchServices() {
 
             {/* Right Column - Family Business Card */}
             <div>
-              <Card className="border-4 border-green-500 shadow-2xl">
-                <CardContent className="p-8">
+              <div className="bg-white border-4 border-green-500 shadow-2xl rounded-2xl overflow-hidden">
+                <div className="p-8">
                   <div className="text-center mb-6">
                     <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full mb-4">
                       <Users className="w-10 h-10 text-white" />
@@ -192,14 +191,14 @@ export default function SilveyraDispatchServices() {
                       </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section - WITH COLORFUL ICONS */}
+      {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-16">
@@ -212,9 +211,9 @@ export default function SilveyraDispatchServices() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Tarifas Competitivas - YELLOW/GOLD Dollar Sign */}
-            <Card className="border-2 border-yellow-100 hover:border-yellow-500 hover:shadow-xl transition-all">
-              <CardContent className="p-8 text-center">
+            {/* Tarifas Competitivas */}
+            <div className="bg-white border-2 border-yellow-100 hover:border-yellow-500 hover:shadow-xl transition-all rounded-2xl overflow-hidden">
+              <div className="p-8 text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mb-6 shadow-lg">
                   <DollarSign className="w-10 h-10 text-white" />
                 </div>
@@ -224,12 +223,12 @@ export default function SilveyraDispatchServices() {
                 <p className="text-gray-600 leading-relaxed">
                   Precios flexibles del 5% al 9% según el nivel de servicio. Trabajamos duro para maximizar tus ganancias y mantener más dinero en tu bolsillo.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            {/* Soporte 24/7 - BLUE Headphones */}
-            <Card className="border-2 border-blue-100 hover:border-blue-500 hover:shadow-xl transition-all">
-              <CardContent className="p-8 text-center">
+            {/* Soporte 24/7 */}
+            <div className="bg-white border-2 border-blue-100 hover:border-blue-500 hover:shadow-xl transition-all rounded-2xl overflow-hidden">
+              <div className="p-8 text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mb-6 shadow-lg">
                   <Headphones className="w-10 h-10 text-white" />
                 </div>
@@ -239,12 +238,12 @@ export default function SilveyraDispatchServices() {
                 <p className="text-gray-600 leading-relaxed">
                   Soporte de despacho las 24 horas para mantenerte en movimiento. Siempre estamos disponibles cuando nos necesites en el camino.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            {/* Servicio Confiable - PURPLE Shield */}
-            <Card className="border-2 border-purple-100 hover:border-purple-500 hover:shadow-xl transition-all">
-              <CardContent className="p-8 text-center">
+            {/* Servicio Confiable */}
+            <div className="bg-white border-2 border-purple-100 hover:border-purple-500 hover:shadow-xl transition-all rounded-2xl overflow-hidden">
+              <div className="p-8 text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mb-6 shadow-lg">
                   <Shield className="w-10 h-10 text-white" />
                 </div>
@@ -254,13 +253,13 @@ export default function SilveyraDispatchServices() {
                 <p className="text-gray-600 leading-relaxed">
                   Despachadores profesionales dedicados a encontrarte las mejores cargas y manejar todo el papeleo eficientemente.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section - MATCHING IMAGE DESIGN */}
+      {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-16">
@@ -274,8 +273,8 @@ export default function SilveyraDispatchServices() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Plan 1: Basic Dispatch (5%) */}
-            <Card className="bg-white shadow-lg hover:shadow-2xl transition-all">
-              <CardContent className="p-8">
+            <div className="bg-white shadow-lg hover:shadow-2xl transition-all rounded-2xl overflow-hidden border border-gray-100">
+              <div className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Basic Dispatch</h3>
                   <div className="text-5xl font-bold text-green-600 mb-2">5%</div>
@@ -314,17 +313,17 @@ export default function SilveyraDispatchServices() {
                     Comenzar
                   </Button>
                 </a>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
             {/* Plan 2: Dispatch Plus (7%) - POPULAR */}
-            <Card className="bg-white shadow-2xl border-4 border-green-600 relative transform md:scale-105">
+            <div className="bg-white shadow-2xl border-4 border-green-600 relative transform md:scale-105 rounded-2xl overflow-hidden">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <span className="bg-green-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                   MÁS POPULAR
                 </span>
               </div>
-              <CardContent className="p-8">
+              <div className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Dispatch Plus</h3>
                   <div className="text-5xl font-bold text-green-600 mb-2">7%</div>
@@ -369,12 +368,12 @@ export default function SilveyraDispatchServices() {
                     Comenzar
                   </Button>
                 </a>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
             {/* Plan 3: Dispatch VIP (9%) */}
-            <Card className="bg-white shadow-lg hover:shadow-2xl transition-all">
-              <CardContent className="p-8">
+            <div className="bg-white shadow-lg hover:shadow-2xl transition-all rounded-2xl overflow-hidden border border-gray-100">
+              <div className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Dispatch VIP</h3>
                   <div className="text-5xl font-bold text-green-600 mb-2">9%</div>
@@ -415,8 +414,8 @@ export default function SilveyraDispatchServices() {
                     Comenzar
                   </Button>
                 </a>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -443,7 +442,7 @@ export default function SilveyraDispatchServices() {
 
             <div className="text-center">
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 text-xl px-12 py-6 font-bold shadow-2xl">
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-6 font-bold shadow-2xl">
                   Regístrate Ahora
                 </Button>
               </a>
@@ -463,60 +462,60 @@ export default function SilveyraDispatchServices() {
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
-            <Card className="border-2 border-green-100 hover:border-green-500 transition-all">
-              <CardContent className="p-6">
+            <div className="bg-white border-2 border-green-100 hover:border-green-500 transition-all rounded-2xl overflow-hidden">
+              <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   ¿Cuáles son sus tarifas de comisión?
                 </h3>
                 <p className="text-gray-700">
                   Ofrecemos tres planes flexibles: 5% para despacho básico, 7% para despacho más soporte administrativo, y 9% para nuestro paquete VIP completo con contabilidad profesional.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="border-2 border-green-100 hover:border-green-500 transition-all">
-              <CardContent className="p-6">
+            <div className="bg-white border-2 border-green-100 hover:border-green-500 transition-all rounded-2xl overflow-hidden">
+              <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   ¿Qué equipos despachan?
                 </h3>
                 <p className="text-gray-700">
                   Despachamos remolques Dry Van, Flatbed y Power-Only. Si tienes equipo especializado, contáctanos para discutir tus necesidades.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="border-2 border-green-100 hover:border-green-500 transition-all">
-              <CardContent className="p-6">
+            <div className="bg-white border-2 border-green-100 hover:border-green-500 transition-all rounded-2xl overflow-hidden">
+              <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   ¿Necesito mi propia autoridad?
                 </h3>
                 <p className="text-gray-700">
                   Sí, debes tener autoridad MC activa en buen estado para usar nuestros servicios de despacho.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="border-2 border-green-100 hover:border-green-500 transition-all">
-              <CardContent className="p-6">
+            <div className="bg-white border-2 border-green-100 hover:border-green-500 transition-all rounded-2xl overflow-hidden">
+              <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   ¿Cómo me pagan?
                 </h3>
                 <p className="text-gray-700">
                   Soportamos varios métodos de pago incluyendo transferencia bancaria directa, Zelle y PayPal para tu conveniencia.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="border-2 border-green-100 hover:border-green-500 transition-all">
-              <CardContent className="p-6">
+            <div className="bg-white border-2 border-green-100 hover:border-green-500 transition-all rounded-2xl overflow-hidden">
+              <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   ¿Qué significa Sin Despacho Forzado?
                 </h3>
                 <p className="text-gray-700">
                   Negociamos las mejores tarifas y te presentamos opciones de carga, pero tú siempre tienes la última palabra. Nunca te forzamos a tomar una carga que no quieres.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -570,5 +569,3 @@ export default function SilveyraDispatchServices() {
     </div>
   );
 }
-
-// END OF FILE
