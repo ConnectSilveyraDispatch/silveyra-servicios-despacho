@@ -28,19 +28,19 @@ export default function SilveyraDispatchServices() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Navigation Header */}
-      <header className="fixed top-0 w-full bg-white shadow-md z-50">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="flex items-center justify-between py-4">
-            {/* Logo - 5x Larger & Transparent */}
-            <div className="flex items-center space-x-3">
+      {/* Navigation Header - Locked height to prevent blocking */}
+      <header className="fixed top-0 w-full bg-white shadow-md z-50 h-24">
+        <div className="container mx-auto px-4 lg:px-6 h-full">
+          <div className="flex items-center justify-between h-full">
+            {/* Logo - Half Size & Transparent */}
+            <div className="flex items-center h-full py-2">
               <Image
                 src="/logo.png"
                 alt="Silveyra Dispatch Services Logo"
-                width={500}
-                height={180}
+                width={250}
+                height={90}
                 unoptimized
-                className="object-contain mix-blend-multiply"
+                className="object-contain h-full w-auto mix-blend-multiply"
               />
             </div>
            
@@ -71,8 +71,8 @@ export default function SilveyraDispatchServices() {
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <nav className="md:hidden py-4 border-t">
-              <div className="flex flex-col space-y-4">
+            <nav className="md:hidden py-4 border-t bg-white shadow-lg absolute w-full left-0">
+              <div className="flex flex-col space-y-4 px-4">
                 <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-green-600 font-medium text-left">
                   Inicio
                 </button>
@@ -91,8 +91,8 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section id="home" className="pt-40 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section - Adjusted padding so it sits perfectly below the header */}
+      <section id="home" className="pt-32 min-h-screen flex items-center bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6 py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Main Content */}
@@ -116,7 +116,7 @@ export default function SilveyraDispatchServices() {
 
               <div className="flex justify-center mb-8">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 font-bold">
+                  <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 font-bold">
                     ¡Comienza Ahora!
                   </Button>
                 </a>
@@ -433,7 +433,7 @@ export default function SilveyraDispatchServices() {
 
             <div className="text-center">
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-6 font-bold shadow-2xl">
+                <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white text-xl px-12 py-6 font-bold shadow-2xl">
                   Regístrate Ahora
                 </Button>
               </a>
