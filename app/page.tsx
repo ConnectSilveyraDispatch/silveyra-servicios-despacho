@@ -32,7 +32,7 @@ export default function SilveyraDispatchServices() {
       {/* LOGO - 250px wide, Overlapping the header, True Transparency */}
       <div className="absolute top-2 left-4 lg:left-12 z-[100] pointer-events-none">
         <Image
-          src="/logo.png"
+          src="/logo-tm.png"
           alt="Silveyra Dispatch Services Logo"
           width={250}
           height={90}
