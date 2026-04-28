@@ -92,9 +92,8 @@ export default function SilveyraDispatchServices() {
             {/* Left Column - Main Content */}
             <div className="flex flex-col items-center lg:items-start">
               
-              {/* LOGO - MATEMÁTICAS EXACTAS APLICADAS AQUÍ */}
-              {/* -82px se come el aire de arriba dejando 4px. -84px se come el aire de abajo dejando 4px. */}
-              <div className="flex justify-center w-full relative z-20" style={{ marginTop: '-82px', marginBottom: '-84px' }}>
+              {/* LOGO - EXACTLY 32px from header (-55px) and 24px from badge (-64px) */}
+              <div className="flex justify-center w-full relative z-20" style={{ marginTop: '-55px', marginBottom: '-64px' }}>
                 <img
                   src="/logo-v4.png"
                   alt="Silveyra Dispatch Services Logo"
@@ -106,14 +105,14 @@ export default function SilveyraDispatchServices() {
                 />
               </div>
 
-              {/* CENTERED Badge - Súper apretado */}
-              <div className="flex justify-center w-full mb-2 relative z-30">
+              {/* CENTERED Badge - EXACTLY 24px below the badge (mb-[24px]) */}
+              <div className="flex justify-center w-full mb-[24px] relative z-30">
                 <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm">
                   ✨ Servicio de Despacho Profesional
                 </div>
               </div>
              
-              {/* Text Elements - Tightly packed to pull everything UP */}
+              {/* Text Elements */}
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-1 leading-tight text-center w-full relative z-30">
                 DESPACHO DE CAMIONES
               </h1>
@@ -143,8 +142,8 @@ export default function SilveyraDispatchServices() {
               </div>
             </div>
 
-            {/* Right Column - Family Business Card - EXACTLY 8px from header (mt-2) */}
-            <div className="mt-2">
+            {/* Right Column - Family Business Card - EXACTLY 32px from header (mt-[32px]) */}
+            <div className="mt-[32px]">
               <div className="bg-white border-4 border-green-500 shadow-2xl rounded-2xl overflow-hidden">
                 <div className="p-8">
                   <div className="text-center mb-6">
