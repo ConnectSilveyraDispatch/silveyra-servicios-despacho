@@ -266,9 +266,11 @@ export default function SilveyraDispatchServices() {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing Section - NEW DESIGN BASED ON IMAGE */}
       <section id="pricing" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 lg:px-6">
+        <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+          
+          {/* UNTOUCHED HEADER TEXT */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Nuestros Planes de Asociación
@@ -278,49 +280,52 @@ export default function SilveyraDispatchServices() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
+            
             {/* Plan 1: Basic Dispatch (5%) */}
-            <div className="bg-white shadow-lg hover:shadow-2xl transition-all rounded-2xl overflow-hidden border border-gray-100">
-              <div className="p-8">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Basic Dispatch</h3>
-                  <div className="text-5xl font-bold text-green-600 mb-2">5%</div>
-                  <p className="text-gray-600 font-medium">Por Carga</p>
+            <div className="bg-white shadow-lg hover:shadow-xl transition-all rounded-xl overflow-hidden border-t-8 border-[#111827] flex flex-col relative">
+              <div className="p-8 text-center pb-6">
+                <h3 className="text-xl font-extrabold text-[#111827] mb-4 uppercase tracking-wider">Basic Dispatch</h3>
+                <div className="text-7xl font-extrabold text-green-500 mb-4">5%</div>
+                <div className="bg-green-50/80 py-2 w-full mx-auto">
+                  <p className="text-[#111827] font-extrabold uppercase tracking-widest text-sm">Por Carga</p>
                 </div>
+              </div>
 
-                <div className="space-y-3 mb-8">
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Reserva Premium de Cargas</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Negociación de Tarifas</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Confirmaciones de Carga</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Verificación de Crédito de Brokers</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Gestión de Paquetes de Configuración</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Sin Despacho Forzado</p>
-                  </div>
+              <div className="px-8 pb-8 flex-grow space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Reserva Premium de Cargas</p>
                 </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Negociación de Tarifas</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Confirmaciones de Carga</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Verificación de Crédito de Brokers</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Gestión de Paquetes de Configuración</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Sin Despacho Forzado</p>
+                </div>
+              </div>
 
+              <div className="px-8 pb-8 mt-auto">
                 <a 
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full py-3 rounded-md font-bold shadow-md transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}
+                  className="flex items-center justify-center w-full py-3 rounded-md font-bold shadow-md transition-colors hover:opacity-90 text-white"
+                  style={{ backgroundColor: '#f59e0b' }}
                 >
                   Comenzar
                 </a>
@@ -328,58 +333,63 @@ export default function SilveyraDispatchServices() {
             </div>
 
             {/* Plan 2: Dispatch Plus (7%) - POPULAR */}
-            <div className="bg-white shadow-2xl border-4 border-green-600 relative transform md:scale-105 rounded-2xl overflow-hidden">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-green-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+            <div className="bg-white shadow-2xl hover:shadow-3xl transition-all rounded-xl overflow-hidden border-t-8 border-green-500 flex flex-col relative transform md:-translate-y-2">
+              
+              {/* Diagonal Ribbon */}
+              <div className="absolute top-0 right-0 overflow-hidden w-32 h-32 z-10 pointer-events-none">
+                <div className="absolute top-6 -right-8 w-40 bg-green-500 text-white text-center py-1.5 text-[10px] font-extrabold tracking-wider uppercase transform rotate-45 shadow-md">
                   MÁS POPULAR
-                </span>
+                </div>
               </div>
-              <div className="p-8">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Dispatch Plus</h3>
-                  <div className="text-5xl font-bold text-green-600 mb-2">7%</div>
-                  <p className="text-gray-600 font-medium">Por Carga</p>
+
+              <div className="p-8 text-center pb-6">
+                <h3 className="text-xl font-extrabold text-[#111827] mb-4 uppercase tracking-wider">Dispatch Plus</h3>
+                <div className="text-7xl font-extrabold text-green-500 mb-4">7%</div>
+                <div className="bg-green-50/80 py-2 w-full mx-auto">
+                  <p className="text-[#111827] font-extrabold uppercase tracking-widest text-sm">Por Carga</p>
                 </div>
+              </div>
 
-                <p className="font-bold text-green-600 mb-4 text-sm">Todo en Basic Dispatch, MÁS:</p>
+              <p className="text-sm italic text-gray-600 text-center mb-6 px-8">Todo en Basic Dispatch, MÁS:</p>
 
-                <div className="space-y-3 mb-8">
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Soporte 24/7</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Seguimiento de Carga Completo</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Comunicación con Brokers/Shippers</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Facturación y Cobranza</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Seguimiento de Millaje</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Reportes Semanales de Rendimiento</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Gestión de PODs</p>
-                  </div>
+              <div className="px-8 pb-8 flex-grow space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Soporte 24/7</p>
                 </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Seguimiento de Carga Completo</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Comunicación con Brokers/Shippers</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Facturación y Cobranza</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Seguimiento de Millaje</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Reportes Semanales de Rendimiento</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Gestión de PODs</p>
+                </div>
+              </div>
 
+              <div className="px-8 pb-8 mt-auto">
                 <a 
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full py-3 rounded-md font-bold shadow-md transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}
+                  className="flex items-center justify-center w-full py-3 rounded-md font-bold shadow-md transition-colors hover:opacity-90 text-white"
+                  style={{ backgroundColor: '#f59e0b' }}
                 >
                   Comenzar
                 </a>
@@ -387,49 +397,51 @@ export default function SilveyraDispatchServices() {
             </div>
 
             {/* Plan 3: Dispatch VIP (9%) */}
-            <div className="bg-white shadow-lg hover:shadow-2xl transition-all rounded-2xl overflow-hidden border border-gray-100">
-              <div className="p-8">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Dispatch VIP</h3>
-                  <div className="text-5xl font-bold text-green-600 mb-2">9%</div>
-                  <p className="text-gray-600 font-medium">Por Carga</p>
+            <div className="bg-white shadow-lg hover:shadow-xl transition-all rounded-xl overflow-hidden border-t-8 border-[#111827] flex flex-col relative">
+              <div className="p-8 text-center pb-6">
+                <h3 className="text-xl font-extrabold text-[#111827] mb-4 uppercase tracking-wider">Dispatch VIP</h3>
+                <div className="text-7xl font-extrabold text-green-500 mb-4">9%</div>
+                <div className="bg-green-50/80 py-2 w-full mx-auto">
+                  <p className="text-[#111827] font-extrabold uppercase tracking-widest text-sm">Por Carga</p>
                 </div>
+              </div>
 
-                <p className="font-bold text-green-600 mb-4 text-sm">Todo en Dispatch Plus, MÁS:</p>
+              <p className="text-sm italic text-gray-600 text-center mb-6 px-8">Todo en Dispatch Plus, MÁS:</p>
 
-                <div className="space-y-3 mb-8">
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Seguimiento Completo de Gastos</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Estados de Pérdidas y Ganancias (P&L)</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Reportes IFTA Trimestrales</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Gestión y Organización de Recibos</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Preparación para Temporada de Impuestos</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 text-sm">Análisis Financiero Mensual</p>
-                  </div>
+              <div className="px-8 pb-8 flex-grow space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Seguimiento Completo de Gastos</p>
                 </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Estados de Pérdidas y Ganancias (P&L)</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Reportes IFTA Trimestrales</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Gestión y Organización de Recibos</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Preparación para Temporada de Impuestos</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm">Análisis Financiero Mensual</p>
+                </div>
+              </div>
 
+              <div className="px-8 pb-8 mt-auto">
                 <a 
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full py-3 rounded-md font-bold shadow-md transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#f59e0b', color: '#ffffff' }}
+                  className="flex items-center justify-center w-full py-3 rounded-md font-bold shadow-md transition-colors hover:opacity-90 text-white"
+                  style={{ backgroundColor: '#f59e0b' }}
                 >
                   Comenzar
                 </a>
