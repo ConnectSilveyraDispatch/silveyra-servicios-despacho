@@ -83,8 +83,8 @@ export default function SilveyraDispatchServices() {
         </div>
       </header>
 
-      {/* Hero Section - pt-24 starts EXACTLY at the bottom line of the header. Removed min-h-screen to stop stretching! */}
-      <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* Hero Section - pt-24 starts EXACTLY at the bottom line of the header */}
+      <section id="home" className="pt-24 pb-16 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6">
           
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -92,8 +92,9 @@ export default function SilveyraDispatchServices() {
             {/* Left Column - Main Content */}
             <div className="flex flex-col items-center lg:items-start">
               
-              {/* LOGO - mt-0.5 is exactly 2px from header. mb-0.5 is exactly 2px from badge. */}
-              <div className="flex justify-center w-full mt-0.5 mb-0.5">
+              {/* LOGO - MATEMÁTICAS EXACTAS APLICADAS AQUÍ */}
+              {/* -82px se come el aire de arriba dejando 4px. -84px se come el aire de abajo dejando 4px. */}
+              <div className="flex justify-center w-full relative z-20" style={{ marginTop: '-82px', marginBottom: '-84px' }}>
                 <img
                   src="/logo-v4.png"
                   alt="Silveyra Dispatch Services Logo"
@@ -105,36 +106,36 @@ export default function SilveyraDispatchServices() {
                 />
               </div>
 
-              {/* CENTERED Badge - Sits 2px below logo */}
-              <div className="flex justify-center w-full mb-2">
-                <div className="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold shadow-sm">
+              {/* CENTERED Badge - Súper apretado */}
+              <div className="flex justify-center w-full mb-2 relative z-30">
+                <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm">
                   ✨ Servicio de Despacho Profesional
                 </div>
               </div>
              
               {/* Text Elements - Tightly packed to pull everything UP */}
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-1 leading-tight text-center w-full">
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-1 leading-tight text-center w-full relative z-30">
                 DESPACHO DE CAMIONES
               </h1>
-              <p className="text-2xl font-semibold text-green-600 mb-2 text-center w-full">
+              <p className="text-2xl font-semibold text-green-600 mb-2 text-center w-full relative z-30">
                 Para Dueños Operadores
               </p>
-              <p className="text-lg text-gray-700 mb-4 leading-relaxed text-center lg:text-left w-full">
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed text-center lg:text-left w-full relative z-30">
                 Nuestros despachadores de camiones trabajan para conseguirte cargas, manejar todo el papeleo, mientras tú conduces y ganas dinero. Nos enfocamos en hacer crecer tu negocio y maximizar tus ganancias.
               </p>
 
-              <div className="flex justify-center w-full mb-4">
+              <div className="flex justify-center w-full mb-4 relative z-30">
                 <a 
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 py-3 rounded-md font-bold shadow-lg transition-all transform hover:scale-105"
+                  className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 py-4 rounded-md font-bold shadow-lg transition-all transform hover:scale-105"
                 >
                   ¡Comienza Ahora!
                 </a>
               </div>
 
-              <div className="flex justify-center items-center space-x-3 text-gray-700 w-full">
+              <div className="flex justify-center items-center space-x-3 text-gray-700 w-full relative z-30">
                 <Phone className="w-5 h-5 text-green-600" />
                 <a href="tel:4692465756" className="text-xl font-bold hover:text-green-600 transition-colors">
                   (469) 246-5756
@@ -142,7 +143,7 @@ export default function SilveyraDispatchServices() {
               </div>
             </div>
 
-            {/* Right Column - Family Business Card - mt-2 is exactly 8px from header */}
+            {/* Right Column - Family Business Card - EXACTLY 8px from header (mt-2) */}
             <div className="mt-2">
               <div className="bg-white border-4 border-green-500 shadow-2xl rounded-2xl overflow-hidden">
                 <div className="p-8">
