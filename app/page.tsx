@@ -116,10 +116,14 @@ export default function SilveyraDispatchServices() {
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-1 leading-tight text-center w-full relative z-30">
                 DESPACHO DE CAMIONES
               </h1>
-              <p className="text-2xl font-semibold text-green-600 mb-2 text-center w-full relative z-30">
+              
+              {/* EXACTLY 16px of space below this line (mb-[16px]) */}
+              <p className="text-2xl font-semibold text-green-600 mb-[16px] text-center w-full relative z-30">
                 Para Dueños Operadores
               </p>
-              <p className="text-lg text-gray-700 mb-4 leading-relaxed text-center lg:text-left w-full relative z-30">
+              
+              {/* EXACTLY 24px of space below this paragraph (mb-[24px]) */}
+              <p className="text-lg text-gray-700 mb-[24px] leading-relaxed text-center lg:text-left w-full relative z-30">
                 Nuestros despachadores de camiones trabajan para conseguirte cargas, manejar todo el papeleo, mientras tú conduces y ganas dinero. Nos enfocamos en hacer crecer tu negocio y maximizar tus ganancias.
               </p>
 
@@ -176,7 +180,7 @@ export default function SilveyraDispatchServices() {
                       <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
                       <div>
                         <p className="font-bold text-gray-900">Disponibles 24/7 Cuando Nos Necesites</p>
-                        <p className="text-sm text-gray-600">Soporte real en la carretera, no mensajes automáticos</p>
+                        <p className="text-sm text-gray-600">Soporte real en la carretera, te acompañamos hasta tu destino.</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
