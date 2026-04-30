@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -84,4 +85,8 @@ export default function SilveyraDispatchServices() {
       </header>
 
       {/* Hero Section - pt-24 starts EXACTLY at the bottom line of the header */}
-      <section id="home
+      <section id="home">
+        {/* Hero Section content goes here */}
+      </section>
+    </div>
+  
