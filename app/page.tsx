@@ -126,7 +126,7 @@ export default function SilveyraDispatchServices() {
 
               <div className="flex justify-center w-full mb-4 relative z-30">
                 <a 
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
+                  href="https://forms.zohopublic.com/connectsilveyra1/form/REGISTRATIONCarrierClientProfile/formperma/d1pjQrc0jFCc5W-_c9xHvEYgP2oUq314ywUjlgMOs-o" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white text-lg px-8 py-4 rounded-md font-bold shadow-lg transition-all transform hover:scale-105"
@@ -304,6 +304,16 @@ export default function SilveyraDispatchServices() {
                   <p className="text-gray-700 text-sm">Sin Despacho Forzado</p>
                 </div>
               </div>
+              <div className="px-8 pb-8">
+                <a
+                  href="https://forms.zohopublic.com/connectsilveyra1/form/REGISTRATIONCarrierClientProfile/formperma/d1pjQrc0jFCc5W-_c9xHvEYgP2oUq314ywUjlgMOs-o"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center bg-gray-900 hover:bg-gray-700 text-white py-3 rounded-lg font-bold transition-all"
+                >
+                  Comenzar
+                </a>
+              </div>
             </div>
 
             {/* Plan 2: Dispatch Plus (7%) - POPULAR */}
@@ -356,6 +366,16 @@ export default function SilveyraDispatchServices() {
                   <p className="text-gray-700 text-sm">Gestión de PODs</p>
                 </div>
               </div>
+              <div className="px-8 pb-8">
+                <a
+                  href="https://forms.zohopublic.com/connectsilveyra1/form/REGISTRATIONCarrierClientProfile/formperma/d1pjQrc0jFCc5W-_c9xHvEYgP2oUq314ywUjlgMOs-o"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-bold transition-all"
+                >
+                  Comenzar
+                </a>
+              </div>
             </div>
 
             {/* Plan 3: Dispatch VIP (9%) */}
@@ -396,6 +416,16 @@ export default function SilveyraDispatchServices() {
                   <p className="text-gray-700 text-sm">Análisis Financiero Mensual</p>
                 </div>
               </div>
+              <div className="px-8 pb-8">
+                <a
+                  href="https://forms.zohopublic.com/connectsilveyra1/form/REGISTRATIONCarrierClientProfile/formperma/d1pjQrc0jFCc5W-_c9xHvEYgP2oUq314ywUjlgMOs-o"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center bg-gray-900 hover:bg-gray-700 text-white py-3 rounded-lg font-bold transition-all"
+                >
+                  Comenzar
+                </a>
+              </div>
             </div>
 
           </div>
@@ -424,7 +454,7 @@ export default function SilveyraDispatchServices() {
 
             <div className="text-center">
               <a 
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdgOhTmjb63orHU3rv7ZyCh2thozSiOLDRzBFm5X62AQyEcQw/viewform?usp=dialog" 
+                href="https://forms.zohopublic.com/connectsilveyra1/form/REGISTRATIONCarrierClientProfile/formperma/d1pjQrc0jFCc5W-_c9xHvEYgP2oUq314ywUjlgMOs-o" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center text-xl px-12 py-6 rounded-md font-bold shadow-2xl transition-all transform hover:scale-105"
