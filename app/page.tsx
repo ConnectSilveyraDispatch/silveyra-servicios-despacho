@@ -1,5 +1,5 @@
 "use client";
-
+ 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import {
@@ -13,10 +13,10 @@ import {
   Headphones,
   Shield
 } from "lucide-react";
-
+ 
 export default function SilveyraDispatchServices() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+ 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -24,10 +24,10 @@ export default function SilveyraDispatchServices() {
       setMobileMenuOpen(false);
     }
   };
-
+ 
   return (
     <div className="flex flex-col min-h-screen bg-white relative">
-
+ 
       {/* Navigation Header - Locked height (h-24) */}
       <header className="fixed top-0 w-full bg-white shadow-md z-50 h-24">
         <div className="container mx-auto px-4 lg:px-6 h-full">
@@ -51,7 +51,7 @@ export default function SilveyraDispatchServices() {
                 FAQ
               </button>
             </nav>
-
+ 
             {/* Mobile Menu Button */}
             <button
               className="md:hidden relative z-[1000]"
@@ -60,7 +60,7 @@ export default function SilveyraDispatchServices() {
               {mobileMenuOpen ? <X className="h-8 w-8 text-black" /> : <Menu className="h-8 w-8 text-black" />}
             </button>
           </div>
-
+ 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
             <nav className="md:hidden py-4 border-t bg-white shadow-lg absolute w-full left-0 top-24 z-[900]">
@@ -82,7 +82,7 @@ export default function SilveyraDispatchServices() {
           )}
         </div>
       </header>
-
+ 
       {/* Hero Section - pt-24 starts EXACTLY at the bottom line of the header */}
       <section id="home" className="pt-24 pb-16 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container mx-auto px-4 lg:px-6">
@@ -104,7 +104,7 @@ export default function SilveyraDispatchServices() {
                   }}
                 />
               </div>
-
+ 
               {/* Badge */}
               <div className="flex justify-center w-full mb-[24px] relative z-30">
                 <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm">
@@ -123,7 +123,7 @@ export default function SilveyraDispatchServices() {
               <p className="text-lg text-gray-700 mb-[24px] leading-relaxed text-center lg:text-left w-full relative z-30">
                 Nuestros despachadores de camiones trabajan para conseguirte cargas, manejar todo el papeleo, mientras tú conduces y ganas dinero. Nos enfocamos en hacer crecer tu negocio y maximizar tus ganancias.
               </p>
-
+ 
               <div className="flex justify-center w-full mb-4 relative z-30">
                 <a 
                   href="https://forms.zohopublic.com/connectsilveyra1/form/REGISTRATIONCarrierClientProfile/formperma/d1pjQrc0jFCc5W-_c9xHvEYgP2oUq314ywUjlgMOs-o" 
@@ -134,7 +134,7 @@ export default function SilveyraDispatchServices() {
                   ¡Comienza Ahora!
                 </a>
               </div>
-
+ 
               <div className="flex justify-center items-center space-x-3 text-gray-700 w-full relative z-30">
                 <Phone className="w-5 h-5 text-green-600" />
                 <a href="tel:4692465756" className="text-xl font-bold hover:text-green-600 transition-colors">
@@ -142,7 +142,7 @@ export default function SilveyraDispatchServices() {
                 </a>
               </div>
             </div>
-
+ 
             {/* Right Column - Family Business Card */}
             <div className="mt-[32px]">
               <div className="bg-white border-4 border-green-500 shadow-2xl rounded-2xl overflow-hidden">
@@ -158,13 +158,13 @@ export default function SilveyraDispatchServices() {
                       ATENCIÓN PERSONALIZADA GARANTIZADA
                     </p>
                   </div>
-
+ 
                   <div className="bg-green-50 rounded-lg p-6 mb-6">
                     <p className="text-gray-700 italic text-center text-lg leading-relaxed">
                       "No eres solo un número para nosotros. Somos una familia que trabaja para hacer crecer TU negocio como si fuera el nuestro."
                     </p>
                   </div>
-
+ 
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
@@ -201,7 +201,7 @@ export default function SilveyraDispatchServices() {
           </div>
         </div>
       </section>
-
+ 
       {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-6">
@@ -213,7 +213,7 @@ export default function SilveyraDispatchServices() {
               Beneficios que marcan la diferencia
             </p>
           </div>
-
+ 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white border-2 border-yellow-100 hover:border-yellow-500 hover:shadow-xl transition-all rounded-2xl overflow-hidden">
               <div className="p-8 text-center">
@@ -226,7 +226,7 @@ export default function SilveyraDispatchServices() {
                 </p>
               </div>
             </div>
-
+ 
             <div className="bg-white border-2 border-blue-100 hover:border-blue-500 hover:shadow-xl transition-all rounded-2xl overflow-hidden">
               <div className="p-8 text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mb-6 shadow-lg">
@@ -238,7 +238,7 @@ export default function SilveyraDispatchServices() {
                 </p>
               </div>
             </div>
-
+ 
             <div className="bg-white border-2 border-purple-100 hover:border-purple-500 hover:shadow-xl transition-all rounded-2xl overflow-hidden">
               <div className="p-8 text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mb-6 shadow-lg">
@@ -253,7 +253,7 @@ export default function SilveyraDispatchServices() {
           </div>
         </div>
       </section>
-
+ 
       {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
@@ -266,7 +266,7 @@ export default function SilveyraDispatchServices() {
               En Silveyra Dispatch, creemos en una verdadera asociación. Cobramos un porcentaje por carga porque alinea nuestros objetivos con los tuyos: solo ganamos más dinero cuando negociamos tarifas más altas para tu camión.
             </p>
           </div>
-
+ 
           <div className="grid md:grid-cols-3 gap-8">
             
             {/* Plan 1: Basic Dispatch (5%) */}
@@ -315,7 +315,7 @@ export default function SilveyraDispatchServices() {
                 </a>
               </div>
             </div>
-
+ 
             {/* Plan 2: Dispatch Plus (7%) - POPULAR */}
             <div className="bg-white shadow-2xl hover:shadow-3xl transition-all rounded-xl overflow-hidden border-t-8 border-green-500 flex flex-col relative transform md:-translate-y-2">
               
@@ -325,7 +325,7 @@ export default function SilveyraDispatchServices() {
                   MÁS POPULAR
                 </div>
               </div>
-
+ 
               <div className="p-8 text-center pb-6">
                 <h3 className="text-xl font-extrabold text-[#111827] mb-4 uppercase tracking-wider">Dispatch Plus</h3>
                 <div className="text-7xl font-extrabold text-green-500 mb-4">7%</div>
@@ -333,9 +333,9 @@ export default function SilveyraDispatchServices() {
                   <p className="text-[#111827] font-extrabold uppercase tracking-widest text-sm">Por Carga</p>
                 </div>
               </div>
-
+ 
               <p className="text-sm italic text-gray-600 text-center mb-6 px-8">Todo en Basic Dispatch, MÁS:</p>
-
+ 
               <div className="px-8 pb-8 flex-grow space-y-4">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -377,7 +377,7 @@ export default function SilveyraDispatchServices() {
                 </a>
               </div>
             </div>
-
+ 
             {/* Plan 3: Dispatch VIP (9%) */}
             <div className="bg-white shadow-lg hover:shadow-xl transition-all rounded-xl overflow-hidden border-t-8 border-[#111827] flex flex-col relative">
               <div className="p-8 text-center pb-6">
@@ -387,9 +387,9 @@ export default function SilveyraDispatchServices() {
                   <p className="text-[#111827] font-extrabold uppercase tracking-widest text-sm">Por Carga</p>
                 </div>
               </div>
-
+ 
               <p className="text-sm italic text-gray-600 text-center mb-6 px-8">Todo en Dispatch Plus, MÁS:</p>
-
+ 
               <div className="px-8 pb-8 flex-grow space-y-4">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -427,11 +427,11 @@ export default function SilveyraDispatchServices() {
                 </a>
               </div>
             </div>
-
+ 
           </div>
         </div>
       </section>
-
+ 
       {/* About Section */}
       <section id="about" className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-6">
@@ -451,7 +451,7 @@ export default function SilveyraDispatchServices() {
                 Con años de experiencia en despacho de camiones y contabilidad profesional, brindamos servicio personalizado a cada cliente, asegurando que obtengas las mejores cargas a tarifas competitivas. Nuestro equipo trabaja incansablemente para hacer crecer tu negocio y maximizar tu rentabilidad.
               </p>
             </div>
-
+ 
             <div className="text-center">
               <a 
                 href="https://forms.zohopublic.com/connectsilveyra1/form/REGISTRATIONCarrierClientProfile/formperma/d1pjQrc0jFCc5W-_c9xHvEYgP2oUq314ywUjlgMOs-o" 
@@ -466,7 +466,7 @@ export default function SilveyraDispatchServices() {
           </div>
         </div>
       </section>
-
+ 
       {/* FAQ Section */}
       <section id="faq" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-6">
@@ -476,7 +476,7 @@ export default function SilveyraDispatchServices() {
             </h2>
             <div className="w-24 h-1 bg-green-600 mx-auto"></div>
           </div>
-
+ 
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="bg-white border-2 border-green-100 hover:border-green-500 transition-all rounded-2xl overflow-hidden">
               <div className="p-6">
@@ -484,28 +484,28 @@ export default function SilveyraDispatchServices() {
                 <p className="text-gray-700">Ofrecemos tres planes flexibles: 5% para despacho básico, 7% para despacho más soporte administrativo, y 9% para nuestro paquete VIP completo con contabilidad profesional.</p>
               </div>
             </div>
-
+ 
             <div className="bg-white border-2 border-green-100 hover:border-green-500 transition-all rounded-2xl overflow-hidden">
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">¿Qué equipos despachan?</h3>
                 <p className="text-gray-700">Despachamos remolques Dry Van, Flatbed y Power-Only. Si tienes equipo especializado, contáctanos para discutir tus necesidades.</p>
               </div>
             </div>
-
+ 
             <div className="bg-white border-2 border-green-100 hover:border-green-500 transition-all rounded-2xl overflow-hidden">
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">¿Necesito mi propia autoridad?</h3>
                 <p className="text-gray-700">Sí, debes tener autoridad MC activa en buen estado para usar nuestros servicios de despacho.</p>
               </div>
             </div>
-
+ 
             <div className="bg-white border-2 border-green-100 hover:border-green-500 transition-all rounded-2xl overflow-hidden">
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">¿Cómo me pagan?</h3>
                 <p className="text-gray-700">Soportamos varios métodos de pago incluyendo transferencia bancaria directa, Zelle y PayPal para tu conveniencia.</p>
               </div>
             </div>
-
+ 
             <div className="bg-white border-2 border-green-100 hover:border-green-500 transition-all rounded-2xl overflow-hidden">
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">¿Qué significa Sin Despacho Forzado?</h3>
@@ -515,7 +515,7 @@ export default function SilveyraDispatchServices() {
           </div>
         </div>
       </section>
-
+ 
       {/* Footer */}
       <footer className="bg-green-900 text-white py-12">
         <div className="container mx-auto px-4 lg:px-6">
@@ -529,7 +529,7 @@ export default function SilveyraDispatchServices() {
               </div>
               <p className="text-green-200">Despacho Profesional de Camiones para Dueños Operadores</p>
             </div>
-
+ 
             <div>
               <h4 className="font-bold text-lg mb-4">Enlaces Rápidos</h4>
               <div className="space-y-2">
@@ -538,7 +538,7 @@ export default function SilveyraDispatchServices() {
                 <button onClick={() => scrollToSection('about')} className="block text-green-200 hover:text-white">Nosotros</button>
               </div>
             </div>
-
+ 
             <div>
               <h4 className="font-bold text-lg mb-4">Contacto</h4>
               <div className="space-y-2 text-green-200">
@@ -548,7 +548,7 @@ export default function SilveyraDispatchServices() {
               </div>
             </div>
           </div>
-
+ 
           <div className="border-t border-green-800 pt-8 text-center text-green-200">
             <p>© 2024 Silveyra Dispatch Services. Todos los derechos reservados.</p>
           </div>
